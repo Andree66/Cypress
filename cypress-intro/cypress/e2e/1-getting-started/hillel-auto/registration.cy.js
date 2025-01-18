@@ -157,15 +157,14 @@ describe('Check registration', () => {
 
             cy.get('#signupName').type('Name');
             cy.get('#signupLastName').type('Lastname');
-            cy.get('#signupEmail').type('123qwer@qwerty5.qwe');
+            cy.get('#signupEmail').type('123qwer@qwerty6.qwe');
             cy.get('#signupPassword').type('123Qazwsx');
             cy.get('#signupRepeatPassword').type('123Qazwsx');
             cy.contains('button', 'Register').click();
-            cy.get('h1').should('have.text', 'Garage');
-            
+            cy.get('h1').should('have.text', 'Garage');           
 
+        });
 
-        })
         it('Check the Register button is disabled if data incorrect ', () => {
  
             cy.get('#signupName').type('Name');
@@ -173,11 +172,10 @@ describe('Check registration', () => {
             cy.get('#signupEmail').type('123qwer@qwerty3.qwe');
             cy.get('#signupPassword').type('123Qazwsx');
             cy.get('#signupRepeatPassword').type('123');
-            cy.contains('button', 'Register').should('be.disabled');
-                         
+            cy.contains('button', 'Register').should('be.disabled');                         
 
         });        
 
     });   
-
-})
+  
+});

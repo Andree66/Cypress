@@ -38,14 +38,14 @@ class GaragePage {
     openPageAsLoggedUser() {
         HomePage.openPage();
         HomePage.openSignInForm();
-        SignInForm.loginWithCredentials('123qwer@qwerty6.qwe', '123Qazwsx');
+        SignInForm.loginWithCredentials(Cypress.env('USERNAME'), Cypress.env('PASSWORD'));
     }
 
     addNewCarByBrandAndModel(brand, model) {
         this.addNewCarButton.click();
         this.brandDropdown.select(brand);
         this.modelDropdown.select(model);
-        this.mileageField.type(999);
+        this.mileageField.type(100);
         this.submitAddingCarButton.click();
         this.submitAddingCarButton.should('not.be.visible');
     }

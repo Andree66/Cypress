@@ -1,5 +1,10 @@
 {
   "devDependencies": {
-    "cypress": "^13.17.0"
+    "cypress": "^13.17.0",
+    "cypress-mochawesome-reporter": "^3.8.2"
+  },
+  "scripts": {
+    "cypress:runTest1": "npx cypress run --config-file test1.config.js --spec \"cypress/e2e/1-getting-started/hillel-auto/garage.cy.js\"",
+    "cypress:runMain": "npx cypress run --config-file cypress.config.js --spec \"cypress/e2e/1-getting-started/hillel-auto/garage.cy.js\""
   }
 }

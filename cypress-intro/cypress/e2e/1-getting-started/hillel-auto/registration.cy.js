@@ -22,7 +22,7 @@ describe('Check registration', () => {
 
 
         })
-        it('Check wrong data', () => {
+        it('Check wrong data:Input with invalid characters (numbers)', () => {
  
             cy.get('#signupName').type('123');
             cy.get('#signupName').blur();
@@ -30,7 +30,7 @@ describe('Check registration', () => {
             cy.get('#signupName').should('have.css', 'border-color', 'rgb(220, 53, 69)');
 
         })
-        it('Check Wrong Length1', () => {
+        it('Check wrong length: less than 2 characters', () => {
 
             cy.get('#signupName').type('a');
             cy.get('#signupName').blur();
@@ -38,7 +38,7 @@ describe('Check registration', () => {
             cy.get('#signupName').should('have.css', 'border-color', 'rgb(220, 53, 69)');
 
         })
-        it('Check Wrong Length2', () => {
+        it('Check wrong length: more than 20 characters', () => {
 
             cy.get('#signupName').type('qwertyuiopasdfghjklzxc');
             cy.get('#signupName').blur();
@@ -58,7 +58,7 @@ describe('Check registration', () => {
 
 
         })
-        it('Check wrong data', () => {
+        it('Check wrong data:Input with invalid characters (numbers)', () => {
  
             cy.get('#signupLastName').type('123');
             cy.get('#signupLastName').blur();
@@ -66,7 +66,7 @@ describe('Check registration', () => {
             cy.get('#signupLastName').should('have.css', 'border-color', 'rgb(220, 53, 69)');
 
         })
-        it('Check Wrong Length1', () => {
+        it('Check wrong length: less than 2 characters', () => {
 
             cy.get('#signupLastName').type('a');
             cy.get('#signupLastName').blur();
@@ -74,7 +74,7 @@ describe('Check registration', () => {
             cy.get('#signupLastName').should('have.css', 'border-color', 'rgb(220, 53, 69)');
 
         })
-        it('Check Wrong Length2', () => {
+        it('Check wrong length: more than 20 characters', () => {
 
             cy.get('#signupLastName').type('qwertyuiopasdfghjklzxc');
             cy.get('#signupLastName').blur();
@@ -95,7 +95,7 @@ describe('Check registration', () => {
 
 
         })
-        it('Check wrong data', () => {
+        it('Check wrong data: without @+domain part ', () => {
  
             cy.get('#signupEmail').type('123qwer');
             cy.get('#signupEmail').blur();
@@ -117,7 +117,7 @@ describe('Check registration', () => {
 
 
         });
-        it('Check wrong data', () => {
+        it('Check wrong data:only 3 digits', () => {
  
             cy.get('#signupPassword').type('123');
             cy.get('#signupPassword').blur();
@@ -140,7 +140,7 @@ describe('Check registration', () => {
 
 
         })
-        it('Check wrong data', () => {
+        it('Check wrong data: short password', () => {
  
             cy.get('#signupRepeatPassword').type('123Qazwsx');
             cy.get('#signupRepeatPassword').blur();
@@ -157,7 +157,7 @@ describe('Check registration', () => {
 
             cy.get('#signupName').type('Name');
             cy.get('#signupLastName').type('Lastname');
-            cy.get('#signupEmail').type('123qwer@qwerty6.qwe');
+            cy.get('#signupEmail').type('123qwer@qwerty23.qwe');
             cy.get('#signupPassword').type('123Qazwsx');
             cy.get('#signupRepeatPassword').type('123Qazwsx');
             cy.contains('button', 'Register').click();
